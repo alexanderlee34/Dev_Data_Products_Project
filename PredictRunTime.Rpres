@@ -1,0 +1,39 @@
+Developing Data Products Course Project
+========================================================
+Predicting Your Running Time
+
+
+Introduction
+========================================================
+
+- Let us say that you are asked to run one lap (ie. 400m) at an outdoor track.  Based on your 400m time, the Shiny application can predict your running times for different distances.   
+- The distances that you can choose from are 800m, 1 mile, 2 miles, and 5,000m.  Note that you can choose only one distance at a time.
+- The formula that is used to predict your running time depends on the selected distance.
+- The application will convert your 400m time in seconds into minutes/seconds format for your predicted time based on the selected distance.
+
+
+How to Use the Shiny Application
+========================================================
+
+1. Use the slider to choose the time you ran in your 400m in seconds.
+2. Select one of the radio buttons for the distance that you want to predict for your running time.
+3. Click on the Submit button to see your predicted time for the selected distance.  The time will be outputted in minutes and seconds.  
+4. If you change the 400m time and/or the distance and then click Submit again, the predicted time will be updated.
+
+
+Predicted Time
+========================================================
+If let us say you are in great shape and ran 55 seconds in the 400m time trial.  Your estimated 5,000m time would be 1,000 seconds.  To convert this time into minutes and seconds, the application used the following R code:
+```{r predtime}
+floor(1000/60)
+1000 %% 60
+```
+In this case, your predicted time for the 5,000m is 16 minutes and 40 seconds.
+
+
+Conclusions
+========================================================
+
+- If you try to run the distance that you chose for the prediction, compare your actual time with the predicted time outputted by the Shiny application.
+- If you ran faster than the predicted time, congratulations!  You exceeded the expectations set by the application.
+- Best of Luck!  And have fun! 
